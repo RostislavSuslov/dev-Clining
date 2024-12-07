@@ -1,13 +1,97 @@
 * {
-    padding: 0;
-    margin: 0;
+
     box-sizing: border-box;
 }
 
 body {
-    font-size: 16px;
+    font-family: $global-font;
+    line-height: $global-line-height;
+    font-weight: $global-font-weight;
+    font-size: $global-font-size;
     background-color: $white-primary;
+    color: $text-dark-primary;
 }
+
+p,
+li {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+ol {
+    li>ol {
+        list-style: decimal-leading-zero;
+
+    }
+}
+
+ul {
+    list-style: none;
+
+    li {
+        &:before {
+            content: "- ";
+        }
+    }
+}
+
+a {
+    color: $link-color;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+        color: $accent-brand;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    // margin-top: 0.83em;
+    // margin-bottom: 0.83em;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 600;
+    span {
+        color: $accent-brand;
+    }
+}
+
+h1,
+.h1 {
+    font-size: 128px;
+}
+
+h2,
+.h2 {
+    font-size: 96px;
+}
+
+h3,
+.h3 {
+    font-size: 48px;
+}
+
+h4,
+.h4 {
+    font-size: 32px;
+}
+
+h5,
+.h5 {
+    font-size: 20px;
+}
+
+h6,
+.h6 {
+    font-size: 16px;
+}
+
+
 
 .container {
     width: 100%;
@@ -18,11 +102,17 @@ body {
     padding-right: 12px;
 }
 
-.markap-grid {
+.markap-grid-3 {
     display: grid;
-    grid-gap: 12px;
+    padding-top: 60px;
+    grid-gap: 30px;
     grid-template-columns: 1fr 1fr 1fr;
     @extend .container;
+}
+
+.markap-grid-2 {
+    @extend .markap-grid-3;
+    grid-template-columns: 1fr 1fr;
 }
 
 .link-markap {
@@ -67,4 +157,16 @@ body {
             margin-bottom: 40px;
         }
     }
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+.fw-800 {
+    font-weight: 800;
 }
