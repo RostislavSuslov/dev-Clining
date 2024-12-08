@@ -1,15 +1,32 @@
 .banner {
-    
+    margin-bottom: 244px;
     .container {
         background: url(./assets/img/banner-1.png) center/cover no-repeat $text-dark-secondary;
         min-height: 787px;
         display: flex;
         align-items: flex-end;
         border-radius: 60px;
+        padding: 0 70px 57px;
     }
 
     &-row {
         display: flex;
         align-items: flex-end;
+        width: 100%;
+        color: $white;
+    }
+    &-title {
+        @extend .h2;
+        line-height: .9;
+        max-width: 862px;
+    }
+
+    &-description {
+        line-height: 1.2;
+        max-width: 334px;
+        margin-left: -74px;
+    }
+    .btn {
+        margin-left: auto;
     }
 }
