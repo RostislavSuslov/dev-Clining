@@ -45,17 +45,18 @@ a {
     }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1,.h1,
+h2,.h2,
+h3,.h3,
+h4,.h4,
+h5,.h5,
+h6,.h6{
     // margin-top: 0.83em;
     // margin-bottom: 0.83em;
     margin-top: 0;
     margin-bottom: 0;
     font-weight: 600;
+
     span {
         color: $accent-brand;
     }
@@ -112,7 +113,7 @@ h6,
 
 .markap-grid-2 {
     @extend .markap-grid-3;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: .7fr 1fr;
 }
 
 .link-markap {
@@ -169,4 +170,70 @@ h6,
 
 .fw-800 {
     font-weight: 800;
+}
+
+
+.btn {
+    font-size: 20px;
+    border: 1px solid rgb(255 255 255 / 37%);
+    border-radius: 44px;
+    padding: 31px 53px;
+    transition: all .3s;
+    &:hover {
+        cursor: pointer;
+    }
+
+    &.btn-primary {
+        color: $white;
+        background-color: $accent-brand;
+
+        &:hover {
+            color: $text-dark-primary;
+            background-color: $white-primary;
+            border: 1px solid rgb(000 000 000 / 14%);
+        }
+    }
+
+    &.btn-secondary {
+        color: $text-dark-primary;
+        background-color: $white-primary;
+        border: 1px solid rgb(000 000 000 / 14%);
+
+        &:hover {
+            color: $white;
+            background-color: $accent-brand;
+            border: 1px solid rgb(255 255 255 / 37%);
+        }
+    }
+
+    &.btn-double {
+        border: none;
+        padding: 0;
+
+        span {
+            border-radius: 44px;
+            padding: 31px 53px;
+            color: $white;
+            background-color: $accent-brand;
+            display: inline-block;
+            border: 1px solid rgb(255 255 255 / 37%);
+            transition: all .3s;
+            +span {
+                padding: 31px 33px;
+            }
+        }
+
+        &:hover {
+            span {
+                color: $text-dark-primary;
+                background-color: $white-primary;
+                border: 1px solid rgb(000 000 000 / 14%);
+            }
+        }
+    }
+}
+
+::selection {
+    color: $white-primary;
+    background-color: $accent-brand;
 }
