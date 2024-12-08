@@ -1,1 +1,15 @@
- 
+.banner {
+    
+    .container {
+        background: url(./assets/img/banner-1.png) center/cover no-repeat $text-dark-secondary;
+        min-height: 787px;
+        display: flex;
+        align-items: flex-end;
+        border-radius: 60px;
+    }
+
+    &-row {
+        display: flex;
+        align-items: flex-end;
+    }
+}

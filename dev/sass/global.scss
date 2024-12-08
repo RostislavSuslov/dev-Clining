@@ -1,6 +1,8 @@
 * {
-
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
+    font-family: $global-font;
 }
 
 body {
@@ -11,6 +13,7 @@ body {
     background-color: $white-primary;
     color: $text-dark-primary;
 }
+
 
 p,
 li {
@@ -45,12 +48,23 @@ a {
     }
 }
 
-h1,.h1,
-h2,.h2,
-h3,.h3,
-h4,.h4,
-h5,.h5,
-h6,.h6{
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
     // margin-top: 0.83em;
     // margin-bottom: 0.83em;
     margin-top: 0;
@@ -92,8 +106,6 @@ h6,
     font-size: 16px;
 }
 
-
-
 .container {
     width: 100%;
     max-width: 1820px;
@@ -114,6 +126,13 @@ h6,
 .markap-grid-2 {
     @extend .markap-grid-3;
     grid-template-columns: .7fr 1fr;
+}
+
+.grid-item {
+    .icon-svg {
+        width: 42px;
+        height: 42px;
+    }
 }
 
 .link-markap {
@@ -174,13 +193,16 @@ h6,
 
 
 .btn {
+    display: inline-block;
     font-size: 20px;
     border: 1px solid rgb(255 255 255 / 37%);
     border-radius: 44px;
-    padding: 31px 53px;
+    padding: 31.5px 53px;
     transition: all .3s;
+
     &:hover {
         cursor: pointer;
+        text-decoration: none;
     }
 
     &.btn-primary {
@@ -209,6 +231,8 @@ h6,
     &.btn-double {
         border: none;
         padding: 0;
+        display: flex;
+        align-items: center;
 
         span {
             border-radius: 44px;
@@ -218,8 +242,9 @@ h6,
             display: inline-block;
             border: 1px solid rgb(255 255 255 / 37%);
             transition: all .3s;
+
             +span {
-                padding: 31px 33px;
+                padding: 31px 36.5px;
             }
         }
 
@@ -231,6 +256,59 @@ h6,
             }
         }
     }
+
+    .icon-svg {
+        width: 13px;
+        height: 13px;
+    }
+}
+
+.icon {
+    display: inline-flex;
+    padding: 12px;
+    border-radius: 50%;
+    width: 68px;
+    height: 68px;
+    justify-content: center;
+    align-items: center;
+    color: $text-dark-primary;
+    background-color: $white-primary;
+
+    .icon-svg {
+        width: auto;
+        height: auto;
+        max-width: 23px;
+        max-height: 23px;
+    }
+
+    &.icon-md {
+        width: 72px;
+        height: 72px;
+    }
+
+    &.icon-lg {
+        width: 88px;
+        height: 88px;
+
+        .icon-svg {
+            width: 13px;
+            height: 13px;
+        }
+    }
+
+    &.icon-outline {
+        border: 1px solid rgba(0, 0, 0, 0.14);
+
+        img {
+            width: 36px;
+            height: 34px;   
+        }
+    }
+}
+
+.bg-accent {
+    background-color: $accent-brand;
+    color: $white;
 }
 
 ::selection {
